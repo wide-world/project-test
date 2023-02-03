@@ -17,23 +17,6 @@
         <link href="../static/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="../static/img/avataaars.svg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-            </div>
-        </header>
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -58,24 +41,27 @@
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" data-sb-validations="required"/>
-                                <label for="name">이름</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">정확한 이름을 입력해주세요.</div>
+                                <input class="form-control" id="form_name" type="text" data-sb-validations="required"/>
+                                <label for="form_name">이름</label>
+                                <div class="invalid-feedback" data-sb-feedback="form_name:required">정확한 이름을 입력해주세요.</div>
                             </div>
                             <!-- 사원번호 input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="id" type="text"/>
-                                <label for="id">사번</label>
+                                <input class="form-control" id="form_id" type="text" data-sb-validations="required"/>
+                                <label for="form_id">사번</label>
+                                <div class="invalid-feedback" data-sb-feedback="form_id:required">사번을 입력해주세요.</div>
                             </div>
                             <!-- 주민번호 앞자리 input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="security" type="text"/>
-                                <label for="security">주민번호</label>
+                                <input class="form-control" id="form_security" type="text" data-sb-validations="required"/>
+                                <label for="form_security">주민번호</label>
+                                <div class="invalid-feedback" data-sb-feedback="form_security:required">주민번호 앞자리를 입력해주세요.</div>
                             </div>
                             <!-- 성별 input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="sex" type="text"/>
-                                <label for="sex">성별</label>
+                                <input class="form-control" id="form_sex" type="text" data-sb-validations="required"/>
+                                <label for="form_sex">성별</label>
+                                <div class="invalid-feedback" data-sb-feedback="form_sex:required">성별을 입력해주세요.</div>
                             </div>
                             <!-- Submit success message-->
                             <!---->
@@ -96,7 +82,7 @@
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -108,28 +94,25 @@
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">담당자</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            총무부 XXX 부서장
                             <br />
-                            Clark, MO 65243
+                            02-3276-XXXX
                         </p>
                     </div>
-                    <!-- Footer Social Icons-->
+                    <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">만든이</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
+                            26기 신입사원 IT 박한규
+                            <br />
+                            26기 신입사원 IT 백종성
+                            <br />
+                            26기 신입사원 IT 양준식
+                            <br />
+                            26기 신입사원 IT 윤세연
+                            <br />
                         </p>
                     </div>
                 </div>
@@ -150,29 +133,40 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
         <script>
-            const $name = document.getElementById("name");
-            const $id = document.getElementById("id");
-            const $security = document.getElementById("security");
-            const $sex = document.getElementById("sex");
+            const $input_name = document.getElementById("form_name");
+            const $input_id = document.getElementById("form_id");
+            const $input_security = document.getElementById("form_security");
+            const $input_sex = document.getElementById("form_sex");
             const $submit = document.getElementById("submitButton");
 
-            const pathname = window.location.pathname
-            const code = pathname.split('/').at(-1)
+            // const pathname = window.location.pathname
+            // const code = pathname.split('/').at(-1)
+            
+            fetch(`/data`).then((res)=>{return res.json()}).then((get_data)=>{
+                $submit.addEventListener("click",()=>{
+                    const name = $input_name.value;
+                    const code = $input_id.value;
+                    const security = $input_security.value;
+                    const sex = $input_sex.value;
+                    for(var key in get_data) {
+                        console.log('1')
+                        if (key === code) {
+                            if (name === get_data[key]['name'] && code === get_data[key]['id'] && security === get_data[key]['security'] && sex === get_data[key]['sex']) {
+                                window.location.href = `/vote/${code}`;
+                            }       
+                            else {
+                                window.location.href = `/`;
+                            }      
+                            break;
+                        }
+                        else {
+                            window.location.href = `/`;
+                        }
+                    }
+                });
+            })
 
-            $submit.addEventListener("click",()=>{
-                const code = $id.value;
-                window.location.href = `/vote/${code}`;
-            });
-
-            // fetch(`/data`).then((res)=>{return res.json()}).then((get_data)=>{
-            //     console.log(get_data)
-            //     for(var i=0; i<get_data.length; i++) {
-            //         if()
-            //     }
-            //     // const data = convert2chartData(get_data);
-                
-            // })
-    
+            
         </script>
     </body>
 </html>

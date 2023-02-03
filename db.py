@@ -15,26 +15,26 @@ js = [
     {
         'id': '113226',
         'name': '윤세연',
-        'security': 971224,
-        'sex': 1
+        'security': '971224',
+        'sex': '1'
     },
     {
         'id': '113223',
         'name': '백종성',
-        'security': 970719,
-        'sex': 1
+        'security': '970719',
+        'sex': '1'
     },
     {
         'id': '113225',
         'name': '양준식',
-        'security': 960420,
-        'sex': 1
+        'security': '960420',
+        'sex': '1'
     },
     {
         'id': '113245',
         'name': '박한규',
-        'security': 971016,
-        'sex': 1
+        'security': '971016',
+        'sex': '1'
     }
 ]
 for i in range(len(js)):

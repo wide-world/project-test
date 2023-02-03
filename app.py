@@ -27,7 +27,12 @@ def login():
 
 @app.route('/vote/<string:code>')
 def vote(code):
-    return render_template('vote.html', code=code)
+    return render_template('vote.html', employ_num=code)
+
+
+@app.route('/complete')
+def complete():
+    return render_template('complete.html')
 
 
 @app.route('/<string:mem_id>')
